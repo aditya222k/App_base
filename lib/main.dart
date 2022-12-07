@@ -70,46 +70,99 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          child: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.12),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.16,
+                    bottom: MediaQuery.of(context).size.height * 0.02),
+                child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    child: Image.asset('images/ompackers.png')),
+              ),
+              Text(
+                "Log into you account",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+              ),
+              Divider(color: Colors.transparent),
+              TextFormField(
+                decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.alternate_email_outlined,
+                      color: Colors.black,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(width: 3, color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(2.0),
+                    ),
+                    fillColor: Colors.grey.withOpacity(0.13),
+                    filled: true,
+                    border: InputBorder.none,
+                    labelText: 'Enter Email',
+                    hintText: 'Enter Your Email'),
+              ),
+              Divider(color: Colors.transparent),
+              TextFormField(
+                decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.lock_outlined,
+                      color: Colors.black,
+                    ),
+                    suffixIcon: Icon(
+                      Icons.visibility,
+                      color: Colors.black,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(width: 3, color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(2.0),
+                    ),
+                    fillColor: Colors.grey.withOpacity(0.13),
+                    filled: true,
+                    border: InputBorder.none,
+                    labelText: 'Enter password',
+                    hintText: 'Enter Your password'),
+              ),
+              Divider(
+                color: Colors.transparent,
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              MaterialButton(
+                onPressed: () {},
+                color: Color(0xffe47149),
+                minWidth: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.075,
+                child: Text("Log in",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                textColor: Colors.white,
+              ),
+              Divider(color: Colors.transparent,),
+              Text("forgot password?",style: TextStyle(color: Colors.grey,fontSize: 17),),
+              Divider(
+                color: Colors.transparent,
+                height: MediaQuery.of(context).size.height * 0.22,
+              ),
+        RichText(
+          text: TextSpan(
+            text: 'Don’t have an account? ',
+            style: TextStyle(fontSize: 19,color: Colors.grey),
+            children: <TextSpan>[
+              TextSpan(
+                  text: 'Create one',
+                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 19,color: Color(0xffe47149))),
+            ],
+          ),
+        )
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      )),
     );
   }
 }
