@@ -1,0 +1,4 @@
+#Thu Dec 08 01:20:45 IST 2022
+base.0=/Users/adityarai/Desktop/om_packers/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
