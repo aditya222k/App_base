@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
@@ -139,26 +138,37 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Color(0xffe47149),
                 minWidth: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.075,
-                child: Text("Log in",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                child: Text(
+                  "Log in",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
                 textColor: Colors.white,
               ),
-              Divider(color: Colors.transparent,),
-              Text("forgot password?",style: TextStyle(color: Colors.grey,fontSize: 17),),
+              Divider(
+                color: Colors.transparent,
+              ),
+              Text(
+                "forgot password?",
+                style: TextStyle(color: Colors.grey, fontSize: 17),
+              ),
               Divider(
                 color: Colors.transparent,
                 height: MediaQuery.of(context).size.height * 0.22,
               ),
-        RichText(
-          text: TextSpan(
-            text: 'Don’t have an account? ',
-            style: TextStyle(fontSize: 19,color: Colors.grey),
-            children: <TextSpan>[
-              TextSpan(
-                  text: 'Create one',
-                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 19,color: Color(0xffe47149))),
-            ],
-          ),
-        )
+              RichText(
+                text: TextSpan(
+                  text: 'Don’t have an account? ',
+                  style: TextStyle(fontSize: 19, color: Colors.grey),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: 'Create one',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 19,
+                            color: Color(0xffe47149))),
+                  ],
+                ),
+              )
             ],
           ),
         ),
